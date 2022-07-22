@@ -29,3 +29,21 @@ Example:
     ../username/Documents
 
 If your current directory is /home/username, the relative path Documents/report.txt refers to the file /home/username/Documents/report.txt. The .. in ../username/Documents indicates moving up one directory level.
+
+Combining Absolute and Relative Paths
+
+You can combine absolute and relative paths in commands to navigate the file system effectively. For example, you can use cd /etc to move to the /etc directory (absolute path), and then use cd ../home to move to the /home directory relative to your current location.
+Special Directories and Path Symbols
+
+Linux uses several special directories and path symbols that are important to understand:
+
+    Root Directory (/): The top-level directory in the Linux file system hierarchy. All other directories and files reside under this directory.
+
+    Home Directory (~): A shortcut for the current user's home directory. For example, ~/Documents refers to /home/username/Documents.
+
+    Current Directory (.): Represents the current working directory. For example, ./script.sh refers to a file named script.sh in the current directory.
+
+    Parent Directory (..): Represents the parent directory of the current directory. For example, ../ moves up one level in the directory hierarchy.
+
+    Root User's Home Directory (/root): The home directory of the root (superuser) account.
+
