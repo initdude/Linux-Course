@@ -47,3 +47,44 @@ Linux uses several special directories and path symbols that are important to un
 
     Root User's Home Directory (/root): The home directory of the root (superuser) account.
 
+Path Navigation Examples
+
+Here are some practical examples to illustrate how paths work in Linux:
+
+    Moving to a Directory Using an Absolute Path:
+
+    cd /var/log
+
+This command changes the current directory to /var/log, where system logs are typically stored.
+
+Moving to a Directory Using a Relative Path:
+
+cd ../Downloads
+
+If you are currently in /home/username/Documents, this command moves you to /home/username/Downloads.
+
+Copying a File Using an Absolute Path:
+
+cp /home/username/picture.jpg /tmp
+
+This command copies the file picture.jpg from the /home/username/ directory to the /tmp directory.
+
+Moving a File Using a Relative Path:
+
+mv ./report.txt ../Documents
+
+    This command moves the file report.txt from the current directory to the Documents directory, which is one level up.
+
+Environment Variables and Paths
+
+In Linux, environment variables can also store path information, making it easier to access frequently used directories or executables. One of the most important environment variables related to paths is PATH.
+
+    PATH Variable: A colon-separated list of directories where the system looks for executable files when you type a command. You can view it using:
+
+    echo $PATH
+
+Adding a directory to your PATH allows you to run scripts or programs from that directory without needing to specify the full path.
+
+export PATH=$PATH:/home/username/scripts
+
+This command adds /home/username/scripts to your PATH, allowing you to execute scripts from this directory directly.
