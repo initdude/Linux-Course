@@ -27,3 +27,34 @@ Key Directories in the Linux File System
 
 /opt: A directory for installing optional software packages. Software installed here is usually independent of the system's package manager.
 
+
+    /tmp: A temporary directory for storing transient files created by programs. Files in /tmp are often deleted upon reboot.
+
+    /dev: Contains device files, which represent hardware devices like disks, terminals, and printers. For example, /dev/sda represents the first hard drive.
+
+    /proc: A virtual file system that provides a view into the kernel's current state. It contains files that represent system information, such as /proc/cpuinfo for CPU details.
+
+    /sys: Another virtual file system that exposes information about the system's hardware and kernel modules. It is often used in conjunction with /proc.
+
+    /mnt: A directory typically used for mounting temporary file systems, such as a CD-ROM or USB drive.
+
+    /media: Automatically created directories for mounting removable media like CDs, DVDs, and USB drives.
+
+File Types in Linux
+
+Linux supports various file types, each serving different purposes. You can identify the type of a file using the ls -l command, which displays a character at the beginning of each line to denote the file type:
+
+    Regular Files (-): Standard files that contain data, such as text files, executables, and images.
+
+    Directory Files (d): Special files that act as containers for other files and directories.
+
+    Symbolic Links (l): Files that act as pointers or shortcuts to other files or directories.
+
+    Character Devices (c): Files that represent devices that process data one character at a time, like keyboards and serial ports.
+
+    Block Devices (b): Files that represent devices that process data in blocks, such as hard drives.
+
+    Sockets (s): Files used for inter-process communication, often for network services.
+
+    Named Pipes (p): Files used for inter-process communication, where data is read in the order it was written.
+
