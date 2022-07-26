@@ -57,4 +57,29 @@ Linux supports various file types, each serving different purposes. You can iden
     Sockets (s): Files used for inter-process communication, often for network services.
 
     Named Pipes (p): Files used for inter-process communication, where data is read in the order it was written.
+Inodes and File Metadata
 
+In Linux, every file and directory is associated with an inode, a data structure that stores metadata about the file, such as:
+
+    File Size: The total size of the file in bytes.
+    File Permissions: The access permissions that determine who can read, write, or execute the file.
+    Owner and Group: The user and group that own the file.
+    Timestamps: Information about when the file was created, last modified, and last accessed.
+    Link Count: The number of hard links to the file.
+
+The inode does not store the file name or data itself; it only stores the metadata. The file name is stored in the directory that contains the file, which points to the inode.
+Mounting and Unmounting File Systems
+
+Linux can manage multiple file systems on different storage devices by mounting them to specific directories in the unified directory tree. Mounting makes a file system accessible at a specific point in the directory tree, while unmounting removes access.
+
+    Mounting a File System:
+
+    mount /dev/sdb1 /mnt/external
+
+This command mounts the file system on /dev/sdb1 to the /mnt/external directory.
+
+Unmounting a File System:
+
+umount /mnt/external
+
+This command unmounts the file system, making /mnt/external inaccessible until it is mounted again.
