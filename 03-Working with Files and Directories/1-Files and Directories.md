@@ -43,3 +43,60 @@ head filename.txt
 Using tail: Displays the last 10 lines of a file.
 
 tail filename.txt
+Copying Files
+
+Using cp: Copies a file from one location to another.
+
+cp source.txt destination.txt
+
+Moving and Renaming Files
+
+Using mv: Moves a file to a new location or renames it.
+
+mv oldname.txt newname.txt
+mv file.txt /path/to/destination/
+
+Deleting Files
+
+Using rm: Removes a file.
+
+rm filename.txt
+
+Searching for Files
+
+Using find: Searches for files by name, type, or other criteria.
+
+find /path/to/search -name "filename.txt"
+
+Using locate: Searches for files in a pre-built database (faster than find).
+
+locate filename.txt
+
+Basic Directory Operations
+Creating Directories
+
+Using mkdir: Creates a new directory.
+
+mkdir mydirectory
+
+Creating Nested Directories: Use the -p option to create nested directories.
+
+mkdir -p parent/child/grandchild
+
+Navigating Directories
+
+Using cd: Changes the current directory.
+
+cd /path/to/directory
+
+Going to Home Directory:
+
+cd ~
+
+Moving Up One Directory Level:
+
+cd ..
+
+Using pwd: Prints the current working directory.
+
+pwd
