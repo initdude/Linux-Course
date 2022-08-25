@@ -100,3 +100,69 @@ cd ..
 Using pwd: Prints the current working directory.
 
 pwd
+Listing Directory Contents
+
+Using ls: Lists files and directories.
+
+ls
+
+Listing with Details:
+
+ls -l
+
+Listing Hidden Files:
+
+ls -a
+
+Copying Directories
+
+Using cp -r: Recursively copies a directory and its contents.
+
+cp -r sourcedir destinationdir
+
+Moving Directories
+
+Using mv: Moves a directory to a new location.
+
+mv mydirectory /path/to/destination/
+
+Deleting Directories
+
+Using rmdir: Removes an empty directory.
+
+rmdir emptydir
+
+Using rm -r: Recursively removes a directory and its contents.
+
+rm -r mydirectory
+
+File Types and Extensions
+
+In Linux, file types are determined by their content and not just their extension. Common file types include:
+
+    Regular Files: Contain data or code (.txt, .sh, .jpg).
+    Executable Files: Can be run as programs (.sh, .bin, .exe).
+    Symbolic Links: Pointers to other files or directories.
+    Directories: Containers for files and other directories.
+
+You can use the file command to determine the type of a file:
+
+file filename
+
+File Permissions and Ownership
+
+Every file and directory in Linux has associated permissions and ownership that control access:
+
+    Owner: The user who owns the file.
+    Group: The group that owns the file.
+    Others: All other users.
+
+File Permissions
+
+Permissions are represented as a string of 10 characters (e.g., -rwxr-xr--):
+
+    The first character indicates the file type (- for a regular file, d for a directory).
+    The next three characters represent the owner's permissions (r for read, w for write, x for execute).
+    The following three represent group permissions.
+    The last three represent others' permissions.
+
