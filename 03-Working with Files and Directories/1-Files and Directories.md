@@ -165,4 +165,22 @@ Permissions are represented as a string of 10 characters (e.g., -rwxr-xr--):
     The next three characters represent the owner's permissions (r for read, w for write, x for execute).
     The following three represent group permissions.
     The last three represent others' permissions.
+Changing Permissions
 
+Using chmod: Modifies file permissions.
+
+chmod 755 filename.txt
+
+Using chown: Changes file ownership.
+
+chown user:group filename.txt
+
+Special Directories
+Home Directory
+
+The home directory (~) is where user files and personal settings are stored. Each user has a unique home directory located under /home/username.
+Root Directory
+
+The root directory (/) is the top-level directory in the file system hierarchy. It contains all other directories and files.
+Temporary Directory
+The /tmp directory is used for temporary files, often deleted on system reboot.
