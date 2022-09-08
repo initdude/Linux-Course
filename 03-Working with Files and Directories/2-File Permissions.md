@@ -46,3 +46,64 @@ ls -l filename.txt
 The output will display the permissions, owner, group, size, and other details about the file:
 
 -rw-r--r-- 1 user group 1234 Sep  2 14:32 filename.txt
+Modifying File Permissions
+Using chmod
+
+The chmod command is used to change the permissions of a file or directory. Permissions can be set using either symbolic or numeric modes.
+Symbolic Mode
+
+In symbolic mode, you specify the permission type (r, w, x) and the category (u for owner, g for group, o for others, a for all):
+
+    Grant Permissions:
+
+    chmod u+x filename.txt
+
+This command adds execute permissions for the owner.
+
+Revoke Permissions:
+
+chmod g-w filename.txt
+
+This command removes write permissions for the group.
+
+Set Permissions Exactly:
+
+chmod o=r filename.txt
+
+    This command sets others' permissions to read only.
+
+Numeric Mode
+
+In numeric mode, permissions are represented by a three-digit number, where each digit corresponds to the permissions for the owner, group, and others:
+
+    r = 4
+    w = 2
+    x = 1
+
+You add the values to set the desired permissions. For example:
+
+    7 = rwx (4+2+1)
+    6 = rw- (4+2)
+    5 = r-x (4+1)
+    4 = r-- (4)
+
+To set permissions using numeric mode:
+
+chmod 755 filename.txt
+
+This command sets the permissions to rwxr-xr-x, where the owner can read, write, and execute, while the group and others can read and execute.
+Using chown
+
+The chown command changes the ownership of a file or directory:
+
+    Change Owner:
+
+    chown newowner filename.txt
+
+Change Group:
+
+chown :newgroup filename.txt
+
+Change Owner and Group:
+
+chown newowner:newgroup filename.txt
