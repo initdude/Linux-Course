@@ -69,4 +69,66 @@ Extract to a Specific Directory:
 tar -xvf archive.tar -C /path/to/directory
 
     -C: Specifies the directory to extract files into.
+gzip (GNU Zip)
 
+gzip is a popular compression tool that reduces the size of a single file. It replaces the original file with a compressed version by default.
+
+    Compressing a File:
+
+    gzip filename
+
+This creates filename.gz and deletes the original file.
+
+Decompressing a File:
+
+gunzip filename.gz
+
+    This restores the original file and removes the .gz file.
+
+bzip2
+
+bzip2 is another compression tool, similar to gzip but with better compression ratios at the cost of speed.
+
+    Compressing a File:
+
+    bzip2 filename
+
+This creates filename.bz2 and deletes the original file.
+
+Decompressing a File:
+
+bunzip2 filename.bz2
+
+    This restores the original file and removes the .bz2 file.
+
+xz
+
+xz is a modern compression tool that offers high compression ratios, often better than gzip and bzip2.
+
+    Compressing a File:
+
+    xz filename
+
+This creates filename.xz and deletes the original file.
+
+Decompressing a File:
+
+unxz filename.xz
+
+    This restores the original file and removes the .xz file.
+
+zip and unzip
+
+zip is a widely used compression and archiving tool, especially in cross-platform environments.
+
+    Creating a Zip Archive:
+
+    zip archive.zip filename1 filename2
+
+This creates archive.zip containing the specified files.
+
+Extracting a Zip Archive:
+
+unzip archive.zip
+
+This extracts the contents of archive.zip into the current directory.
