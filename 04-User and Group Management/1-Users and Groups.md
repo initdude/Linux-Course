@@ -13,4 +13,33 @@ System vs. Regular Users
 
     System Users: These accounts are used by system processes and services. They typically have a UID below 1000 and do not have a home directory.
     Regular Users: These are the accounts created for human users. They usually have a UID starting from 1000 and a home directory in /home.
+Managing Users
+Adding a New User
+
+To add a new user, use the useradd command:
+
+sudo useradd username
+
+    By default, this command creates a user with the specified username, assigns the next available UID, and creates a home directory at /home/username.
+
+Creating a User with Specific Options
+
+Specify Home Directory:
+
+sudo useradd -m -d /custom/home/dir username
+
+    -m: Creates a home directory.
+    -d: Specifies a custom home directory.
+
+Assigning a Shell:
+
+sudo useradd -s /bin/bash username
+
+    -s: Specifies the login shell.
+
+Setting an Expiry Date:
+
+sudo useradd -e 2024-12-31 username
+
+    -e: Specifies an expiry date for the account.
 
