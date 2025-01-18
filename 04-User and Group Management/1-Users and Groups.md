@@ -42,4 +42,63 @@ Setting an Expiry Date:
 sudo useradd -e 2024-12-31 username
 
     -e: Specifies an expiry date for the account.
+Setting a Password for a User
+
+To set a password for a user, use the passwd command:
+
+sudo passwd username
+
+This command prompts you to enter and confirm a password for the specified user.
+Modifying User Accounts
+
+To modify an existing user account, use the usermod command:
+
+    Change a User's Home Directory:
+
+    sudo usermod -d /new/home/dir -m username
+
+    -d: Specifies the new home directory.
+    -m: Moves the content of the old home directory to the new one.
+
+Change a User's Shell:
+
+sudo usermod -s /bin/zsh username
+
+    -s: Specifies the new login shell.
+
+Lock or Unlock a User Account:
+
+sudo usermod -L username   # Lock
+sudo usermod -U username   # Unlock
+
+        -L: Locks the user account.
+        -U: Unlocks the user account.
+
+Deleting a User
+
+To delete a user, use the userdel command:
+
+sudo userdel username
+
+Delete a User and Their Home Directory:
+
+sudo userdel -r username
+
+        -r: Removes the user's home directory and mail spool.
+
+Managing Groups
+Adding a New Group
+
+To add a new group, use the groupadd command:
+
+sudo groupadd groupname
+
+This creates a new group with the specified groupname.
+Adding a User to a Group
+
+To add a user to a group, use the usermod command with the -aG option:
+
+sudo usermod -aG groupname username
+
+    -aG: Adds the user to the specified group(s) without removing them from other groups.
 
