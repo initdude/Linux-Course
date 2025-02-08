@@ -51,3 +51,44 @@ To view the permissions of files and directories, use the `ls -l` command:
 ```bash
 ls -l
 ```
+This command lists files and directories with detailed information, including permissions.
+
+Example output:
+
+```bash
+-rw-r--r-- 1 user group 1234 Sep  1 12:34 example.txt
+```
+
+## Modifying Permissions with `chmod`
+
+The `chmod` (change mode) command is used to modify permissions.
+
+### Symbolic Mode
+
+Permissions can be modified using symbolic notation:
+
+- **Add a Permission**: Use `+`
+
+  ```bash
+  chmod u+x file.txt  # Add execute permission to the owner
+  ```
+
+- **Remove a Permission**: Use `-`
+
+  ```bash
+  chmod g-w file.txt  # Remove write permission from the group
+  ```
+
+- **Set a Permission Exactly**: Use `=`
+
+  ```bash
+  chmod o=r file.txt  # Set read permission only for others
+  ```
+
+### Numeric (Octal) Mode
+
+Permissions can also be represented as a three-digit octal number:
+
+- **Read (r)**: 4
+- **Write (w)**: 2
+- **Execute (x)**: 1
