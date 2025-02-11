@@ -92,3 +92,68 @@ Permissions can also be represented as a three-digit octal number:
 - **Read (r)**: 4
 - **Write (w)**: 2
 - **Execute (x)**: 1
+Each category (owner, group, others) is assigned a sum of these numbers:
+
+- **Full Permissions (rwx)**: 7 (4+2+1)
+- **Read and Execute (r-x)**: 5 (4+1)
+- **Read Only (r--)**: 4
+
+Example:
+
+```bash
+chmod 755 file.txt
+```
+
+- `7` for the owner: `rwx`
+- `5` for the group: `r-x`
+- `5` for others: `r-x`
+
+### Recursively Changing Permissions
+
+To change permissions for a directory and all its contents, use the `-R` option:
+
+```bash
+chmod -R 755 /path/to/directory
+```
+
+This command applies the specified permissions to the directory and everything within it.
+
+## Changing Ownership with `chown`
+
+The `chown` command changes the ownership of a file or directory.
+
+### Changing the Owner
+
+To change the owner of a file or directory:
+
+```bash
+sudo chown newowner file.txt
+```
+
+### Changing the Group
+
+To change the group associated with a file or directory:
+
+```bash
+sudo chown :newgroup file.txt
+```
+
+### Changing Both Owner and Group
+
+To change both the owner and group:
+
+```bash
+sudo chown newowner:newgroup file.txt
+```
+
+### Recursively Changing Ownership
+
+To change the ownership of a directory and all its contents, use the `-R` option:
+
+```bash
+sudo chown -R newowner:newgroup /path/to/directory
+```
+
+## Special Permissions
+
+### Setuid
