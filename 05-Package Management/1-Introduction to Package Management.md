@@ -26,4 +26,62 @@ Linux distributions use different package managers depending on their family (e.
 - **Key Commands**:
   - `yum`: Legacy command for package management.
   - `dnf`: The modern replacement for YUM, with enhanced features and better dependency resolution.
+### 3. **Pacman**
 
+- **Used By**: Arch Linux and its derivatives.
+- **Packages Format**: `.pkg.tar.xz`
+- **Key Commands**:
+  - `pacman`: Single command for all package management tasks in Arch-based systems.
+
+### 4. **Zypper**
+
+- **Used By**: openSUSE and SUSE Linux Enterprise.
+- **Packages Format**: `.rpm`
+- **Key Commands**:
+  - `zypper`: A command-line interface for managing packages.
+
+### 5. **Flatpak, Snap, and AppImage**
+
+- **Used By**: Multiple distributions.
+- **Purpose**: These are universal package formats designed to work across different distributions.
+- **Key Commands**:
+  - `flatpak`: For managing Flatpak packages.
+  - `snap`: For managing Snap packages.
+  - AppImage files are portable and don't require installation.
+
+## Basic Package Management Commands
+
+### Installing Packages
+
+- **APT** (Debian/Ubuntu):
+
+  ```bash
+  sudo apt install package-name
+  ```
+
+- **DNF** (Fedora/Red Hat/CentOS):
+
+  ```bash
+  sudo dnf install package-name
+  ```
+
+- **Pacman** (Arch Linux):
+
+  ```bash
+  sudo pacman -S package-name
+  ```
+
+- **Zypper** (openSUSE):
+
+  ```bash
+  sudo zypper install package-name
+  ```
+
+### Updating Packages
+
+- **APT**:
+
+  ```bash
+  sudo apt update   # Update package lists
+  sudo apt upgrade  # Upgrade all installed packages
+  ```
