@@ -85,3 +85,126 @@ Linux distributions use different package managers depending on their family (e.
   sudo apt update   # Update package lists
   sudo apt upgrade  # Upgrade all installed packages
   ```
+- **DNF**:
+
+  ```bash
+  sudo dnf upgrade
+  ```
+
+- **Pacman**:
+
+  ```bash
+  sudo pacman -Syu
+  ```
+
+- **Zypper**:
+
+  ```bash
+  sudo zypper refresh   # Refresh repositories
+  sudo zypper update    # Update installed packages
+  ```
+
+### Removing Packages
+
+- **APT**:
+
+  ```bash
+  sudo apt remove package-name
+  ```
+
+  - **Remove Configuration Files**:
+
+    ```bash
+    sudo apt purge package-name
+    ```
+
+- **DNF**:
+
+  ```bash
+  sudo dnf remove package-name
+  ```
+
+- **Pacman**:
+
+  ```bash
+  sudo pacman -R package-name
+  ```
+
+  - **Remove Unused Dependencies**:
+
+    ```bash
+    sudo pacman -Rns package-name
+    ```
+
+- **Zypper**:
+
+  ```bash
+  sudo zypper remove package-name
+  ```
+
+### Searching for Packages
+
+- **APT**:
+
+  ```bash
+  apt search package-name
+  ```
+
+- **DNF**:
+
+  ```bash
+  dnf search package-name
+  ```
+
+- **Pacman**:
+
+  ```bash
+  pacman -Ss package-name
+  ```
+
+- **Zypper**:
+
+  ```bash
+  zypper search package-name
+  ```
+
+### Handling Dependencies
+
+Package managers automatically handle dependencies by installing any required packages along with the requested package. They also manage updates and removals, ensuring that no dependencies are left broken.
+
+### Resolving Broken Packages
+
+Sometimes, package installations or removals can leave the system in an inconsistent state. Here’s how to resolve such issues:
+
+- **APT**:
+
+  ```bash
+  sudo apt --fix-broken install
+  ```
+
+- **DNF**:
+
+  ```bash
+  sudo dnf check
+  ```
+
+- **Pacman**:
+
+  ```bash
+  sudo pacman -Syu --needed --overwrite '*'
+  ```
+
+- **Zypper**:
+
+  ```bash
+  sudo zypper verify
+  ```
+
+## Best Practices for Package Management
+
+- **Regular Updates**: Keep your system and packages up to date to ensure security and stability.
+- **Remove Unused Packages**: Regularly clean up unused packages and dependencies to free up disk space and reduce system clutter.
+- **Use Official Repositories**: Whenever possible, install packages from official repositories to ensure compatibility and receive updates.
+- **Be Cautious with Third-Party Repositories**: Adding unofficial repositories can be risky. Ensure they are trustworthy before use.
+- **Backup Before Major Upgrades**: Before performing significant upgrades or system updates, make sure to back up your system.
+
