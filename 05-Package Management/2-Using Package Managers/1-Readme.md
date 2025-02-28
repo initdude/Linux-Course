@@ -63,3 +63,154 @@ To search for a package by name:
 ```bash
 apt search package-name
 ```
+### Cleaning Up
+
+To remove downloaded package files that are no longer needed:
+
+```bash
+sudo apt clean
+```
+
+To remove unused dependencies:
+
+```bash
+sudo apt autoremove
+```
+
+## DNF (Dandified YUM)
+
+DNF is the modern package manager for Red Hat, CentOS, and Fedora. It replaces YUM with improved dependency resolution and performance.
+
+### Installing Packages
+
+To install a package:
+
+```bash
+sudo dnf install package-name
+```
+
+Example:
+
+```bash
+sudo dnf install vim
+```
+
+### Updating Packages
+
+To update all installed packages:
+
+```bash
+sudo dnf upgrade
+```
+
+### Removing Packages
+
+To remove a package:
+
+```bash
+sudo dnf remove package-name
+```
+
+Example:
+
+```bash
+sudo dnf remove httpd
+```
+
+### Searching for Packages
+
+To search for a package:
+
+```bash
+dnf search package-name
+```
+
+### Cleaning Up
+
+To remove cached package files:
+
+```bash
+sudo dnf clean all
+```
+
+## Pacman
+
+Pacman is the package manager used by Arch Linux and its derivatives. It combines a simple binary package format with an easy-to-use build system.
+
+### Installing Packages
+
+To install a package:
+
+```bash
+sudo pacman -S package-name
+```
+
+Example:
+
+```bash
+sudo pacman -S firefox
+```
+
+### Updating the System
+
+To synchronize and update the entire system:
+
+```bash
+sudo pacman -Syu
+```
+
+### Removing Packages
+
+To remove a package:
+
+```bash
+sudo pacman -R package-name
+```
+
+Example:
+
+```bash
+sudo pacman -R gimp
+```
+
+To remove a package along with its unused dependencies:
+
+```bash
+sudo pacman -Rns package-name
+```
+
+### Searching for Packages
+
+To search for a package:
+
+```bash
+pacman -Ss package-name
+```
+
+### Cleaning Up
+
+To remove all cached package files that are not currently installed:
+
+```bash
+sudo pacman -Sc
+```
+
+## Zypper
+
+Zypper is the package manager used by openSUSE and SUSE Linux Enterprise. It offers a powerful command-line interface for managing `.rpm` packages.
+
+### Installing Packages
+
+To install a package:
+
+```bash
+sudo zypper install package-name
+```
+
+Example:
+
+```bash
+sudo zypper install htop
+```
+
+
