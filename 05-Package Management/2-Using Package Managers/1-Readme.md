@@ -213,4 +213,64 @@ Example:
 sudo zypper install htop
 ```
 
+Universal package managers like Flatpak, Snap, and AppImage allow you to install software across different Linux distributions.
+
+### Flatpak
+
+- **Install a package**:
+
+  ```bash
+  flatpak install flathub package-name
+  ```
+
+- **Run a package**:
+
+  ```bash
+  flatpak run package-name
+  ```
+
+- **List installed packages**:
+
+  ```bash
+  flatpak list
+  ```
+
+### Snap
+
+- **Install a package**:
+
+  ```bash
+  sudo snap install package-name
+  ```
+
+- **List installed packages**:
+
+  ```bash
+  snap list
+  ```
+
+- **Remove a package**:
+
+  ```bash
+  sudo snap remove package-name
+  ```
+
+### AppImage
+
+- **Run an AppImage**:
+
+  Download the `.AppImage` file, make it executable, and run it:
+
+  ```bash
+  chmod +x package-name.AppImage
+  ./package-name.AppImage
+  ```
+
+## Best Practices for Using Package Managers
+
+- **Regularly Update Your System**: Keep your system up to date to ensure security and stability.
+- **Use the Package Manager’s Repositories**: Stick to the official repositories to avoid compatibility issues and receive timely updates.
+- **Manage Dependencies Carefully**: Be aware of dependencies when installing or removing packages to avoid breaking your system.
+- **Clean Up Regularly**: Use cleanup commands to free up disk space and remove unnecessary files.
+- **Check for Broken Packages**: Regularly check for and fix any broken packages to maintain system integrity.
 
