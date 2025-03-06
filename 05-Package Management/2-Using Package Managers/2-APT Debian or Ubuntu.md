@@ -27,3 +27,62 @@ Example:
 ```bash
 sudo apt install git
 ```
+### Updating Package Lists
+
+Before installing or upgrading packages, update the package lists from the repositories:
+
+```bash
+sudo apt update
+```
+
+This command fetches the latest information about available packages, ensuring that you install the most recent versions.
+
+### Upgrading Packages
+
+To upgrade all installed packages to their latest versions:
+
+```bash
+sudo apt upgrade
+```
+
+If you want to perform a full system upgrade, which might include removing obsolete packages or installing new dependencies, use:
+
+```bash
+sudo apt full-upgrade
+```
+
+### Removing Packages
+
+To remove a package while keeping its configuration files:
+
+```bash
+sudo apt remove package-name
+```
+
+Example:
+
+```bash
+sudo apt remove vlc
+```
+
+To remove a package along with its configuration files:
+
+```bash
+sudo apt purge package-name
+```
+
+### Searching for Packages
+
+To search for a package by name or description:
+
+```bash
+apt search package-name
+```
+
+Example:
+
+```bash
+apt search apache
+```
+
+This command will display a list of packages matching the search term.
