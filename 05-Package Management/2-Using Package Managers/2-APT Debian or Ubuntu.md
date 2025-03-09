@@ -84,5 +84,63 @@ Example:
 ```bash
 apt search apache
 ```
+### Viewing Package Information
 
+To view detailed information about a package, including its description, dependencies, and installation size:
+
+```bash
+apt show package-name
+```
+
+Example:
+
+```bash
+apt show nginx
+```
+
+### Cleaning Up
+
+After installing or upgrading packages, you might want to clean up the local package cache to free up disk space:
+
+```bash
+sudo apt clean
+```
+
+To remove packages that were automatically installed to satisfy dependencies but are no longer needed:
+
+```bash
+sudo apt autoremove
+```
+
+### Fixing Broken Dependencies
+
+Sometimes, package installations or removals can leave your system in an inconsistent state. To fix broken dependencies:
+
+```bash
+sudo apt --fix-broken install
+```
+
+This command will attempt to correct any dependency issues.
+
+## Advanced APT Usage
+
+### Pinning Packages
+
+Pinning allows you to prioritize or prevent certain packages from being upgraded. This is useful if you want to stick with a specific version of a package.
+
+To pin a package, you need to create or edit the `/etc/apt/preferences` file:
+
+```plaintext
+Package: package-name
+Pin: version version-number
+Pin-Priority: priority
+```
+
+For example, to pin the `nginx` package to version `1.18.0`:
+
+```plaintext
+Package: nginx
+Pin: version 1.18.0
+Pin-Priority: 1001
+```
 This command will display a list of packages matching the search term.
