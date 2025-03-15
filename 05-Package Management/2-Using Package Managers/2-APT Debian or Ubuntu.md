@@ -203,4 +203,69 @@ Package: nginx
 Pin: version 1.18.0
 Pin-Priority: 1001
 ```
+### Holding Packages
+
+If you want to prevent a package from being upgraded, you can place a hold on it:
+
+```bash
+sudo apt-mark hold package-name
+```
+
+To remove the hold and allow upgrades again:
+
+```bash
+sudo apt-mark unhold package-name
+```
+
+### Adding Repositories
+
+In some cases, you might need to add additional repositories to install software that is not available in the default repositories. To do this, first, add the repository:
+
+```bash
+sudo add-apt-repository ppa:repository-name
+```
+
+Then, update the package lists:
+
+```bash
+sudo apt update
+```
+
+Finally, you can install the package from the newly added repository.
+
+### Managing PPAs (Personal Package Archives)
+
+PPAs are third-party repositories for software packages. They are commonly used to get newer versions of software that are not yet available in the official repositories.
+
+To add a PPA:
+
+```bash
+sudo add-apt-repository ppa:repository-name
+```
+
+To remove a PPA:
+
+```bash
+sudo add-apt-repository --remove ppa:repository-name
+```
+
+### Managing Sources List
+
+The list of repositories that APT uses is stored in the `/etc/apt/sources.list` file and the `/etc/apt/sources.list.d/` directory. You can manually edit these files to add or remove repositories.
+
+Example entry in `sources.list`:
+
+```plaintext
+deb http://archive.ubuntu.com/ubuntu/ focal main restricted
+```
+
+## Troubleshooting APT
+
+### Resolving Package Conflicts
+
+If APT encounters conflicts between packages during installation or upgrade, it will usually provide options to resolve them. You can force the installation with:
+
+```bash
+sudo apt install -f
+```
 
