@@ -1,0 +1,27 @@
+# YUM/DNF (RHEL/CentOS)
+
+YUM (Yellowdog Updater, Modified) and DNF (Dandified YUM) are the primary package management tools for Red Hat-based distributions, including RHEL, CentOS, and Fedora. While DNF is the successor to YUM and is used in more recent releases, YUM is still prevalent in older systems.
+
+## Understanding YUM and DNF
+
+### YUM (Yellowdog Updater, Modified)
+
+YUM is a command-line package management utility that handles software installation, updates, and removal for `.rpm` packages. It also manages dependencies and can work with various repositories.
+
+### DNF (Dandified YUM)
+
+DNF is the modern replacement for YUM, introduced to address performance, dependency resolution, and memory usage issues. It is backward-compatible with YUM, meaning it can perform the same functions with improved efficiency.
+
+### Key Differences Between YUM and DNF
+
+- **Performance**: DNF is faster and uses less memory than YUM.
+- **Dependency Resolution**: DNF provides better handling of dependencies.
+- **Plugin System**: DNF has a more flexible and improved plugin system.
+- **Command Syntax**: Most YUM commands are compatible with DNF, but DNF introduces some new options and enhancements.
+
+## Basic YUM/DNF Commands
+
+### Installing Packages
+
+To install a package with YUM:
+
