@@ -24,4 +24,52 @@ DNF is the modern replacement for YUM, introduced to address performance, depend
 ### Installing Packages
 
 To install a package with YUM:
+```bash
+sudo yum install package-name
+```
 
+With DNF, the command is similar:
+
+```bash
+sudo dnf install package-name
+```
+
+Example:
+
+```bash
+sudo dnf install httpd
+```
+
+### Updating Packages
+
+To update all installed packages:
+
+```bash
+sudo yum update
+```
+
+Or with DNF:
+
+```bash
+sudo dnf upgrade
+```
+
+### Removing Packages
+
+To remove a package:
+
+```bash
+sudo yum remove package-name
+```
+
+Or with DNF:
+
+```bash
+sudo dnf remove package-name
+```
+
+Example:
+
+```bash
+sudo dnf remove nginx
+```
