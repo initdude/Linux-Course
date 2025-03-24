@@ -73,3 +73,71 @@ Example:
 ```bash
 sudo dnf remove nginx
 ```
+### Searching for Packages
+
+To search for a package by name or description:
+
+```bash
+yum search package-name
+```
+
+Or with DNF:
+
+```bash
+dnf search package-name
+```
+
+Example:
+
+```bash
+dnf search mysql
+```
+
+### Viewing Package Information
+
+To display detailed information about a package:
+
+```bash
+yum info package-name
+```
+
+Or with DNF:
+
+```bash
+dnf info package-name
+```
+
+Example:
+
+```bash
+dnf info vim
+```
+
+### Listing Installed Packages
+
+To list all installed packages:
+
+```bash
+yum list installed
+```
+
+Or with DNF:
+
+```bash
+dnf list installed
+```
+
+### Cleaning Up
+
+After installing or updating packages, you might want to clean up the package cache to free up disk space:
+
+```bash
+sudo yum clean all
+```
+
+Or with DNF:
+
+```bash
+sudo dnf clean all
+```
+
