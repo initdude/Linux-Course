@@ -140,4 +140,126 @@ Or with DNF:
 ```bash
 sudo dnf clean all
 ```
+### Managing Repositories
+
+To list enabled repositories:
+
+```bash
+yum repolist
+```
+
+Or with DNF:
+
+```bash
+dnf repolist
+```
+
+To enable or disable a repository:
+
+```bash
+sudo yum-config-manager --enable repository-name
+sudo yum-config-manager --disable repository-name
+```
+
+Or with DNF:
+
+```bash
+sudo dnf config-manager --set-enabled repository-name
+sudo dnf config-manager --set-disabled repository-name
+```
+
+## Advanced YUM/DNF Usage
+
+### Group Installation
+
+YUM and DNF support group installation, which allows you to install a collection of related packages with a single command.
+
+To install a package group (e.g., "Development Tools"):
+
+```bash
+sudo yum groupinstall "Development Tools"
+```
+
+Or with DNF:
+
+```bash
+sudo dnf groupinstall "Development Tools"
+```
+
+### Downgrading Packages
+
+If you need to downgrade a package to an earlier version:
+
+```bash
+sudo yum downgrade package-name
+```
+
+Or with DNF:
+
+```bash
+sudo dnf downgrade package-name
+```
+
+### Listing Available Package Groups
+
+To list all available package groups:
+
+```bash
+yum group list
+```
+
+Or with DNF:
+
+```bash
+dnf group list
+```
+
+### History and Rollback
+
+Both YUM and DNF maintain a transaction history, allowing you to view past transactions or even roll back to a previous state.
+
+To view the transaction history:
+
+```bash
+yum history
+```
+
+Or with DNF:
+
+```bash
+dnf history
+```
+
+To undo a specific transaction:
+
+```bash
+sudo yum history undo transaction-id
+```
+
+Or with DNF:
+
+```bash
+sudo dnf history undo transaction-id
+```
+
+### Resolving Dependency Issues
+
+If you encounter dependency issues during installation or removal, YUM and DNF can attempt to resolve them automatically:
+
+```bash
+sudo yum install -y --skip-broken
+```
+
+Or with DNF:
+
+```bash
+sudo dnf install -y --skip-broken
+```
+
+## Best Practices for YUM/DNF
+
+- **Regularly Update Your System**: Keep your system secure and up-to-date by regularly running update or upgrade commands.
+- **Use `yum` or `dnf` for Package Management**: Avoid using `rpm` directly, as it does not handle dependencies. Always use `yum` or `dnf` for package management tasks.
+- **Be Cautious with Third-Party Repositories**: Only enable trusted repositories to avoid potential security risks or package conflicts.
+- **Clean Up Regularly**: Free up disk space by cleaning up the package cache and removing unused packages.
 
