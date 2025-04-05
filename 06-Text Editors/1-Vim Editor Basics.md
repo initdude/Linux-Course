@@ -50,3 +50,31 @@ If the file does not exist, Vim will create it upon saving.
 - **A**: Insert at the end of the line.
 - **o**: Open a new line below the current line and enter Insert Mode.
 - **O**: Open a new line above the current line and enter Insert Mode.
+### Editing Text
+
+- **x**: Delete the character under the cursor.
+- **dw**: Delete from the cursor to the start of the next word.
+- **dd**: Delete the entire line.
+- **u**: Undo the last change.
+- **Ctrl+r**: Redo the undone change.
+- **p**: Paste text after the cursor.
+- **y**: Yank (copy) text.
+- **yy**: Yank the current line.
+- **P**: Paste text before the cursor.
+
+### Saving and Quitting
+
+- **:w**: Save the file (write changes).
+- **:q**: Quit Vim (close the file).
+- **:wq**: Save and quit.
+- **:q!**: Quit without saving changes.
+- **:x**: Save and quit (same as `:wq`).
+
+### Searching and Replacing
+
+- **/pattern**: Search forward for "pattern".
+- **?pattern**: Search backward for "pattern".
+- **n**: Move to the next occurrence of the search pattern.
+- **N**: Move to the previous occurrence of the search pattern.
+- **:%s/old/new/g**: Replace all occurrences of "old" with "new" in the entire file.
+- **:s/old/new/g**: Replace all occurrences of "old" with "new" in the current line.
