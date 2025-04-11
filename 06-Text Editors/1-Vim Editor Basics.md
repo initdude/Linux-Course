@@ -132,4 +132,35 @@ set hlsearch
 set encoding=utf-8- **N**: Move to the previous occurrence of the search pattern.
 - **:%s/old/new/g**: Replace all occurrences of "old" with "new" in the entire file.
 - **:s/old/new/g**: Replace all occurrences of "old" with "new" in the current line.
+### Installing Plugins
 
+Vim supports plugins, which can be managed manually or with plugin managers like [Vundle](https://github.com/VundleVim/Vundle.vim) or [Pathogen](https://github.com/tpope/vim-pathogen).
+
+Example using Vundle:
+
+1. Add this to your `.vimrc`:
+
+    ```vim
+    set nocompatible              " Be iMproved, required
+    filetype off                  " Required
+    
+    " Set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    
+    " Let Vundle manage Vundle, required
+    Plugin 'VundleVim/Vundle.vim'
+    
+    " Add more plugins here
+    Plugin 'tpope/vim-sensible'
+    
+    " All of your Plugins must be added before the following line
+    call vundle#end()            " Required
+    filetype plugin indent on    " Required
+    ```
+
+2. Install the plugins:
+
+    ```bash
+    vim +PluginInstall +qall
+    ```
