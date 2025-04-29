@@ -115,3 +115,103 @@ The `uniq` command filters out repeated lines in a file, often used in conjuncti
 ## `cut`: Remove Sections from Each Line
 
 The `cut` command extracts sections from each line of input, typically used to extract columns from text files or command outputs.
+
+### Basic Usage
+
+- **Extract the First Column**:
+
+    ```bash
+    cut -d ' ' -f 1 filename
+    ```
+
+    - `-d ' '` specifies the delimiter (a space in this case).
+    - `-f 1` specifies the first field (column).
+
+- **Extract Multiple Columns**:
+
+    ```bash
+    cut -d ',' -f 1,3 filename
+    ```
+
+    This example extracts the first and third columns from a CSV file.
+
+## `tr`: Translate or Delete Characters
+
+The `tr` command is used for translating or deleting characters from text input.
+
+### Basic Usage
+
+- **Convert Lowercase to Uppercase**:
+
+    ```bash
+    tr 'a-z' 'A-Z'
+    ```
+
+- **Delete Specific Characters**:
+
+    ```bash
+    tr -d 'a'
+    ```
+
+    This removes all instances of the letter `a` from the input.
+
+- **Replace a Character**:
+
+    ```bash
+    tr ' ' '_'
+    ```
+
+    This replaces all spaces with underscores.
+
+## `sed`: Stream Editor
+
+The `sed` command is a powerful stream editor for filtering and transforming text.
+
+### Basic Usage
+
+- **Substitute a Word**:
+
+    ```bash
+    sed 's/oldword/newword/' filename
+    ```
+
+    - `s` indicates substitution.
+    - `oldword` is the word to be replaced.
+    - `newword` is the replacement word.
+
+- **Substitute Globally on a Line**:
+
+    ```bash
+    sed 's/oldword/newword/g' filename
+    ```
+
+    The `g` at the end makes the substitution global, replacing all instances of `oldword` on each line.
+
+- **Delete a Line Containing a Pattern**:
+
+    ```bash
+    sed '/pattern/d' filename
+    ```
+
+- **Print Only Matching Lines**:
+
+    ```bash
+    sed -n '/pattern/p' filename
+    ```
+
+## Combining Filters
+
+Filters can be combined using pipes (`|`) to perform more complex text processing tasks.
+
+### Example: Extracting and Sorting Data
+
+Imagine you have a log file and you want to extract all IP addresses, remove duplicates, and sort them:
+
+```bash
+grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' logfile | sort | uniq
+```
+
+- `grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+'` extracts all IP addresses.
+- `sort` sorts the IP addresses.
+- `uniq` removes duplicates.
+
