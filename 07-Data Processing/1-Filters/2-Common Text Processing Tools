@@ -60,6 +60,125 @@ While `sed` is also covered under filters, it’s one of the most versatile text
 
     ```bash
     sed '2i\This is a new line' filename
+
     ```
 
-    This inserts a new line of text after the second line.
+## `head` and `tail`: Display the Beginning or End of Files
+
+The `head` and `tail` commands are used to display the beginning or end of files, respectively.
+
+### `head` Command
+
+- **Display the First 10 Lines**:
+
+    ```bash
+    head filename
+    ```
+
+- **Display the First N Lines**:
+
+    ```bash
+    head -n 20 filename
+    ```
+
+    This displays the first 20 lines of `filename`.
+
+### `tail` Command
+
+- **Display the Last 10 Lines**:
+
+    ```bash
+    tail filename
+    ```
+
+- **Display the Last N Lines**:
+
+    ```bash
+    tail -n 15 filename
+    ```
+
+    This displays the last 15 lines of `filename`.
+
+- **Monitor File Changes**:
+
+    ```bash
+    tail -f filename
+    ```
+
+    This keeps the last few lines visible and updates them as the file changes, useful for monitoring log files.
+
+## `wc`: Word, Line, and Character Count
+
+The `wc` command counts lines, words, and characters in files, making it a handy tool for text analysis.
+
+### Basic Usage
+
+- **Count Lines**:
+
+    ```bash
+    wc -l filename
+    ```
+
+- **Count Words**:
+
+    ```bash
+    wc -w filename
+    ```
+
+- **Count Characters**:
+
+    ```bash
+    wc -m filename
+    ```
+
+- **Full Count**:
+
+    ```bash
+    wc filename
+    ```
+
+    This provides the line, word, and character counts for the file.
+
+## `cut`: Extracting Sections from Lines
+
+`cut` is used to remove or "cut out" sections from each line of text, often based on a delimiter.
+
+### Basic Usage
+
+- **Extract Specific Fields**:
+
+    ```bash
+    cut -d ',' -f 2,4 filename
+    ```
+
+    This extracts the second and fourth fields (columns) from a CSV file.
+
+- **Cut by Character Position**:
+
+    ```bash
+    cut -c 1-5 filename
+    ```
+
+    This extracts the first five characters of each line.
+
+## `paste`: Merge Lines of Files
+
+The `paste` command merges corresponding lines from multiple files.
+
+### Basic Usage
+
+- **Merge Two Files Line by Line**:
+
+    ```bash
+    paste file1 file2
+    ```
+
+    This outputs the contents of `file1` and `file2` side by side, separated by a tab.
+
+- **Specify a Delimiter**:
+
+    ```bash
+    paste -d ',' file1 file2
+    ```
+
+    This merges the files with a comma as the delimiter.    This inserts a new line of text after the second line.
