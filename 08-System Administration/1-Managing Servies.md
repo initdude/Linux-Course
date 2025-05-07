@@ -45,3 +45,68 @@ This page will cover how to manage services using common tools like `systemctl` 
     ```
 
     This command stops the Nginx web server.
+### Restarting a Service
+
+- **Restart a Service**:
+
+    ```bash
+    sudo systemctl restart servicename
+    ```
+
+    Example:
+
+    ```bash
+    sudo systemctl restart nginx
+    ```
+
+    This command stops and then starts the Nginx web server.
+
+### Enabling/Disabling a Service at Boot
+
+- **Enable a Service**:
+
+    ```bash
+    sudo systemctl enable servicename
+    ```
+
+    This command ensures that the service starts automatically when the system boots.
+
+- **Disable a Service**:
+
+    ```bash
+    sudo systemctl disable servicename
+    ```
+
+    This command prevents the service from starting at boot.
+
+### Checking the Status of a Service
+
+- **Check Service Status**:
+
+    ```bash
+    sudo systemctl status servicename
+    ```
+
+    Example:
+
+    ```bash
+    sudo systemctl status nginx
+    ```
+
+    This command displays whether the Nginx service is running, along with other information like its process ID and recent log messages.
+
+### Viewing Logs for a Service
+
+- **View Logs**:
+
+    ```bash
+    sudo journalctl -u servicename
+    ```
+
+    Example:
+
+    ```bash
+    sudo journalctl -u nginx
+    ```
+
+    This command shows the log output for the Nginx service, useful for troubleshooting.
