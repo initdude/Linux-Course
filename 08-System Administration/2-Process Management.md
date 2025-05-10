@@ -73,4 +73,106 @@ The `top` command provides a dynamic, real-time view of system processes. It dis
     ```
 
 - **Start `htop`**:
+```bash
+    htop
+    ```
 
+    This opens the `htop` interface, where you can scroll, sort, and manage processes interactively.
+
+## Managing Processes: `kill`, `pkill`, `killall`, and `nice`
+
+### `kill` Command
+
+The `kill` command sends signals to processes, typically to terminate them.
+
+- **Kill a Process by PID**:
+
+    ```bash
+    kill PID
+    ```
+
+    This sends the default `SIGTERM` signal to gracefully terminate the process with the specified PID.
+
+- **Force Kill a Process**:
+
+    ```bash
+    kill -9 PID
+    ```
+
+    This sends the `SIGKILL` signal to forcibly terminate the process.
+
+### `pkill` Command
+
+`pkill` allows you to send signals to processes based on their name, rather than their PID.
+
+- **Kill Processes by Name**:
+
+    ```bash
+    pkill process_name
+    ```
+
+    This sends the `SIGTERM` signal to all processes with the specified name.
+
+### `killall` Command
+
+`killall` kills all instances of a process by name.
+
+- **Kill All Instances of a Process**:
+
+    ```bash
+    sudo killall process_name
+    ```
+
+    This command kills all processes with the specified name.
+
+### `nice` and `renice` Commands
+
+The `nice` command is used to start a process with a modified scheduling priority, while `renice` changes the priority of an existing process.
+
+- **Start a Process with a Lower Priority**:
+
+    ```bash
+    nice -n 10 command
+    ```
+
+    This starts the command with a nice value of 10, making it less CPU-intensive.
+
+- **Change Priority of a Running Process**:
+
+    ```bash
+    sudo renice 10 -p PID
+    ```
+
+    This changes the priority of the process with the specified PID.
+
+## Monitoring System Performance: `vmstat` and `iostat`
+
+### `vmstat` Command
+
+`vmstat` reports information about processes, memory, paging, block IO, traps, and CPU activity.
+
+- **Basic Usage**:
+
+    ```bash
+    vmstat
+    ```
+
+    This displays a summary of the current system performance.
+
+- **Continuous Monitoring**:
+
+    ```bash
+    vmstat 5
+    ```
+
+    This updates the performance summary every 5 seconds.
+
+### `iostat` Command
+
+`iostat` reports CPU and I/O statistics, useful for identifying bottlenecks in disk performance.
+
+- **Basic Usage**:
+
+    ```bash
+    iostat
+    ```
