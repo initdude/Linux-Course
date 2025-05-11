@@ -176,3 +176,53 @@ The `nice` command is used to start a process with a modified scheduling priorit
     ```bash
     iostat
     ```
+ This displays the average CPU and I/O statistics since the last reboot.
+
+- **Real-Time Monitoring**:
+
+    ```bash
+    iostat 5
+    ```
+
+    This updates the statistics every 5 seconds.
+
+## Managing Background and Foreground Processes: `&`, `jobs`, and `fg/bg`
+
+### Running a Process in the Background
+
+You can run a command in the background by appending `&` at the end.
+
+- **Start a Process in the Background**:
+
+    ```bash
+    command &
+    ```
+
+    This starts the command in the background, allowing you to continue using the terminal.
+
+### Managing Background Jobs with `jobs`, `fg`, and `bg`
+
+- **List Background Jobs**:
+
+    ```bash
+    jobs
+    ```
+
+    This lists all jobs running in the background.
+
+- **Bring a Job to the Foreground**:
+
+    ```bash
+    fg %job_number
+    ```
+
+    This brings the specified background job to the foreground.
+
+- **Send a Job to the Background**:
+
+    ```bash
+    bg %job_number
+    ```
+
+    This sends a suspended job to the background.
+
