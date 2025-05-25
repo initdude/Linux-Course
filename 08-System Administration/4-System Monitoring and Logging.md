@@ -200,3 +200,71 @@ Effective system monitoring and logging are critical for maintaining a healthy a
     ```bash
     grep "Sep  1" /var/log/syslog
     ```
+
+### `journalctl`
+
+- **`journalctl`**: A command for querying and displaying logs from the systemd journal.
+  - **Usage**: 
+    ```bash
+    journalctl
+    ```
+  - **Key Features**:
+    - Displays logs with real-time updates.
+    - Supports advanced filtering by service, time, and log levels.
+
+- **Viewing Boot Logs**:
+  - **View logs from the current boot**:
+    ```bash
+    journalctl -b
+    ```
+  - **View logs from the previous boot**:
+    ```bash
+    journalctl -b -1
+    ```
+
+- **Filtering Logs**:
+  - **Filter by service**:
+    ```bash
+    journalctl -u sshd
+    ```
+  - **Filter by time**:
+    ```bash
+    journalctl --since "2024-09-01 00:00:00" --until "2024-09-02 00:00:00"
+    ```
+
+- **Persistent Logging**:
+  - By default, `journalctl` logs are stored in memory. To make them persistent:
+    ```bash
+    sudo mkdir -p /var/log/journal
+    sudo systemctl restart systemd-journald
+    ```
+
+## Monitoring and Logging Best Practices
+
+### Set Up Log Rotation
+
+To prevent log files from consuming too much disk space, set up log rotation using `logrotate`.
+
+- **Configuration**: Log rotation settings are defined in `/etc/logrotate.conf` and additional files in `/etc/logrotate.d/`.
+- **Example Configuration**:
+    ```bash
+    /var/log/syslog {
+        rotate 7
+        daily
+        missingok
+        notifempty
+        delaycompress
+        compress
+        postrotate
+            /etc/init.d/rsyslog reload > /dev/null
+        endscript
+    }
+    ```
+
+### Regular Monitoring
+
+Regularly monitor your system using tools like `top`, `htop`, and `df` to ensure your system is running smoothly and to catch potential issues early.
+
+### Secure Your Logs
+
+Ensure that your logs are secured by setting appropriate permissions and restricting access to authorized users only. Regularly back up logs to prevent data loss.
