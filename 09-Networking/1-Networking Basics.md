@@ -1,0 +1,79 @@
+# Networking Basics
+
+Understanding networking is crucial for administering Linux systems, especially in environments where multiple systems need to communicate. This page covers the foundational concepts of networking and essential commands in Linux.
+
+## Basic Networking Concepts
+
+### IP Addressing
+
+- **IP Address**: A unique identifier assigned to each device on a network. IP addresses can be either IPv4 or IPv6.
+  - **IPv4**: A 32-bit address represented as four decimal numbers separated by dots (e.g., `192.168.1.1`).
+  - **IPv6**: A 128-bit address represented as eight groups of four hexadecimal digits (e.g., `2001:0db8:85a3:0000:0000:8a2e:0370:7334`).
+
+### Subnetting
+
+- **Subnet**: A subdivision of an IP network. Subnetting allows for better network management and security.
+  - **Subnet Mask**: A 32-bit number that separates the IP address into the network and host portions (e.g., `255.255.255.0`).
+  - **CIDR Notation**: A shorthand for specifying an IP address and its associated network mask (e.g., `192.168.1.0/24`).
+
+### DNS (Domain Name System)
+
+- **DNS**: A system that translates human-readable domain names (e.g., `www.example.com`) into IP addresses.
+  - **DNS Servers**: Servers that store DNS records and respond to queries from clients (e.g., `8.8.8.8` for Google DNS).
+
+### DHCP (Dynamic Host Configuration Protocol)
+
+- **DHCP**: A protocol used to automatically assign IP addresses and other network settings to devices on a network.
+  - **DHCP Server**: A server that dynamically assigns IP addresses to devices.
+  - **DHCP Lease**: The duration for which an IP address is assigned to a device.
+
+### MAC Address
+
+- **MAC Address**: A unique hardware identifier assigned to a network interface card (NIC). MAC addresses are 48 bits long and typically represented in hexadecimal (e.g., `00:1A:2B:3C:4D:5E`).
+
+## Networking Commands
+
+### `ifconfig` and `ip`
+
+- **`ifconfig`**: A traditional command for configuring network interfaces.
+  - **Usage**:
+    ```bash
+    ifconfig
+    ```
+  - **Key Features**:
+    - Displays IP addresses, subnet masks, and other information for network interfaces.
+    - Can be used to bring interfaces up or down.
+
+- **`ip`**: A more modern and powerful command for network configuration.
+  - **Usage**:
+    ```bash
+    ip addr
+    ip link
+    ip route
+    ```
+  - **Key Features**:
+    - `ip addr`: Displays IP addresses and associated information.
+    - `ip link`: Manages network interfaces.
+    - `ip route`: Manages routing tables.
+
+### `ping`
+
+- **`ping`**: Tests connectivity between your system and another device by sending ICMP echo requests.
+  - **Usage**:
+    ```bash
+    ping 8.8.8.8
+    ```
+  - **Key Features**:
+    - Verifies whether a host is reachable.
+    - Measures round-trip time and packet loss.
+
+### `traceroute`
+
+- **`traceroute`**: Traces the path packets take to reach a destination.
+  - **Usage**:
+    ```bash
+    traceroute www.example.com
+    ```
+  - **Key Features**:
+    - Identifies each hop between your system and the destination.
+    - Useful for diagnosing network routing issues.
