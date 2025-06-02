@@ -77,3 +77,85 @@ Understanding networking is crucial for administering Linux systems, especially 
   - **Key Features**:
     - Identifies each hop between your system and the destination.
     - Useful for diagnosing network routing issues.
+
+### `netstat` and `ss`
+
+- **`netstat`**: Displays network connections, routing tables, and interface statistics.
+  - **Usage**:
+    ```bash
+    netstat -tuln
+    ```
+  - **Key Features**:
+    - Shows active listening ports.
+    - Displays network statistics.
+
+- **`ss`**: A modern alternative to `netstat` for displaying socket statistics.
+  - **Usage**:
+    ```bash
+    ss -tuln
+    ```
+  - **Key Features**:
+    - Faster and more detailed than `netstat`.
+    - Displays TCP, UDP, and UNIX socket connections.
+
+### `curl` and `wget`
+
+- **`curl`**: A command-line tool for transferring data from or to a server using various protocols (HTTP, FTP, etc.).
+  - **Usage**:
+    ```bash
+    curl http://www.example.com
+    ```
+  - **Key Features**:
+    - Downloads or uploads data to/from servers.
+    - Supports multiple protocols.
+
+- **`wget`**: A command-line utility for downloading files from the web.
+  - **Usage**:
+    ```bash
+    wget http://www.example.com/file.zip
+    ```
+  - **Key Features**:
+    - Supports downloading files from HTTP, HTTPS, and FTP protocols.
+    - Can download entire websites for offline viewing.
+
+### `nslookup` and `dig`
+
+- **`nslookup`**: Queries DNS to obtain domain name or IP address mapping.
+  - **Usage**:
+    ```bash
+    nslookup www.example.com
+    ```
+  - **Key Features**:
+    - Resolves domain names to IP addresses.
+    - Can be used to troubleshoot DNS issues.
+
+- **`dig`**: A more flexible and powerful DNS lookup utility.
+  - **Usage**:
+    ```bash
+    dig www.example.com
+    ```
+  - **Key Features**:
+    - Provides detailed information about DNS queries.
+    - Supports various query types (A, AAAA, MX, etc.).
+
+### `iptables` and `ufw`
+
+- **`iptables`**: A command-line tool for configuring the Linux kernel’s packet filtering rules (firewall).
+  - **Usage**:
+    ```bash
+    sudo iptables -L
+    ```
+  - **Key Features**:
+    - Manages rules that control incoming and outgoing traffic.
+    - Can filter packets based on IP address, port, protocol, etc.
+
+- **`ufw`**: A user-friendly frontend for managing firewall rules, typically used on Ubuntu.
+  - **Usage**:
+    ```bash
+    sudo ufw status
+    sudo ufw allow 22/tcp
+    ```
+  - **Key Features**:
+    - Simplifies firewall management.
+    - Can quickly enable or disable firewall rules.
+
