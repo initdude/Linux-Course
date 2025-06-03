@@ -158,4 +158,68 @@ Understanding networking is crucial for administering Linux systems, especially 
   - **Key Features**:
     - Simplifies firewall management.
     - Can quickly enable or disable firewall rules.
+### `hostname`
 
+- **`hostname`**: Displays or sets the system's hostname.
+  - **Usage**:
+    ```bash
+    hostname
+    sudo hostnamectl set-hostname new-hostname
+    ```
+  - **Key Features**:
+    - Displays the current hostname.
+    - Can be used to change the system’s hostname.
+
+## Network Configuration Files
+
+### `/etc/network/interfaces`
+
+- **Location**: `/etc/network/interfaces`
+- **Purpose**: Configuration file for network interfaces in Debian-based distributions.
+- **Example**:
+    ```bash
+    auto eth0
+    iface eth0 inet static
+        address 192.168.1.100
+        netmask 255.255.255.0
+        gateway 192.168.1.1
+    ```
+
+### `/etc/resolv.conf`
+
+- **Location**: `/etc/resolv.conf`
+- **Purpose**: Configuration file for DNS resolution.
+- **Example**:
+    ```bash
+    nameserver 8.8.8.8
+    nameserver 8.8.4.4
+    ```
+
+### `/etc/hosts`
+
+- **Location**: `/etc/hosts`
+- **Purpose**: Maps hostnames to IP addresses.
+- **Example**:
+    ```bash
+    127.0.0.1   localhost
+    192.168.1.100   myserver.localdomain   myserver
+    ```
+
+## Network Troubleshooting Tips
+
+### Check Network Interface Status
+
+- Use `ip addr` or `ifconfig` to ensure network interfaces are up and configured correctly.
+
+### Test Connectivity
+
+- Use `ping` to check connectivity between devices.
+- Use `traceroute` to diagnose network path issues.
+
+### Check DNS Resolution
+
+- Use `nslookup` or `dig` to ensure DNS is resolving domain names correctly.
+
+### Monitor Network Traffic
+
+- Use `netstat` or `ss` to monitor network connections and troubleshoot issues.
