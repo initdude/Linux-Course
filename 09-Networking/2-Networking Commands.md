@@ -42,4 +42,95 @@ Although `ifconfig` is deprecated, it is still used on many systems.
     ```bash
     ifconfig
     ```
+This command lists all network interfaces along with their IP addresses.
 
+- **Bring an Interface Up/Down**:
+
+    ```bash
+    sudo ifconfig eth0 up
+    sudo ifconfig eth0 down
+    ```
+
+    These commands bring the `eth0` interface up or down.
+
+- **Assign an IP Address to an Interface**:
+
+    ```bash
+    sudo ifconfig eth0 192.168.1.100 netmask 255.255.255.0
+    ```
+
+    This assigns the IP address `192.168.1.100` with a subnet mask of `255.255.255.0` to the `eth0` interface.
+
+## Checking Network Configuration: `nmcli` and `nmtui`
+
+### `nmcli` Command
+
+`nmcli` is a command-line tool for managing NetworkManager and can be used to control network connections.
+
+- **Show All Connections**:
+
+    ```bash
+    nmcli con show
+    ```
+
+    This lists all network connections and their statuses.
+
+- **Connect to a Network**:
+
+    ```bash
+    nmcli con up id "connection_name"
+    ```
+
+    This brings up the specified network connection.
+
+- **Disconnect from a Network**:
+
+    ```bash
+    nmcli con down id "connection_name"
+    ```
+
+    This disconnects the specified network connection.
+
+### `nmtui` Command
+
+`nmtui` provides a text-based user interface for managing NetworkManager connections.
+
+- **Launch `nmtui`**:
+
+    ```bash
+    sudo nmtui
+    ```
+
+    This launches the `nmtui` interface, where you can easily manage network connections.
+
+## Monitoring Network Traffic: `netstat`, `ss`, and `tcpdump`
+
+### `netstat` Command
+
+`netstat` is a classic command used to monitor network connections, routing tables, interface statistics, masquerade connections, and multicast memberships.
+
+- **Display All Connections**:
+
+    ```bash
+    netstat -a
+    ```
+
+    This command lists all active connections, including TCP and UDP.
+
+- **Display Listening Ports**:
+
+    ```bash
+    netstat -tuln
+    ```
+
+    This shows all listening ports with numeric IP addresses and port numbers.
+
+### `ss` Command
+
+`ss` is a modern alternative to `netstat`, offering faster performance and more detailed information.
+
+- **Display All Connections**:
+
+    ```bash
+    ss -a
+    ```
