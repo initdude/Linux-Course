@@ -134,3 +134,95 @@ This command lists all network interfaces along with their IP addresses.
     ```bash
     ss -a
     ```
+ This shows all listening ports with numeric IP addresses and port numbers.
+
+### `tcpdump` Command
+
+`tcpdump` is a powerful command-line packet analyzer used for network troubleshooting and security analysis.
+
+- **Capture Packets on an Interface**:
+
+    ```bash
+    sudo tcpdump -i eth0
+    ```
+
+    This command captures packets on the `eth0` interface.
+
+- **Save Captured Packets to a File**:
+
+    ```bash
+    sudo tcpdump -i eth0 -w capture.pcap
+    ```
+
+    This saves the captured packets to a file named `capture.pcap`.
+
+## Testing Network Connectivity: `ping`, `traceroute`, and `mtr`
+
+### `ping` Command
+
+`ping` is used to test the reachability of a host on a network and measure the round-trip time for messages sent from the originating host.
+
+- **Ping a Host**:
+
+    ```bash
+    ping google.com
+    ```
+
+    This sends ICMP echo requests to `google.com` and reports the results.
+
+### `traceroute` Command
+
+`traceroute` is used to track the path that packets take from your system to a destination.
+
+- **Trace the Route to a Host**:
+
+    ```bash
+    traceroute google.com
+    ```
+
+    This shows the path taken by packets to reach `google.com`.
+
+### `mtr` Command
+
+`mtr` combines the functionality of `ping` and `traceroute` in a single network diagnostic tool.
+
+- **Run `mtr` on a Host**:
+
+    ```bash
+    mtr google.com
+    ```
+
+    This command provides a real-time view of the network path to `google.com`.
+
+## Network Configuration Files
+
+Understanding the key network configuration files in Linux is essential for manual network setup and troubleshooting.
+
+### `/etc/network/interfaces`
+
+This file is used to configure network interfaces on Debian-based systems.
+
+Example configuration:
+
+```bash
+auto eth0
+iface eth0 inet static
+    address 192.168.1.100
+    netmask 255.255.255.0
+    gateway 192.168.1.1
+```
+
+### `/etc/sysconfig/network-scripts/`
+
+This directory contains configuration files for network interfaces on Red Hat-based systems.
+
+Example configuration for `eth0`:
+
+```bash
+DEVICE=eth0
+BOOTPROTO=static
+ONBOOT=yes
+IPADDR=192.168.1.100
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+```
