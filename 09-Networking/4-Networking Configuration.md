@@ -78,3 +78,68 @@ Networking is a critical aspect of any Linux system, as it allows the system to 
   GATEWAY=192.168.1.1
   ONBOOT=yes
   ```
+### 3.4 Restarting Network Services
+
+- **Debian/Ubuntu**:
+  ```bash
+  sudo systemctl restart networking
+  ```
+- **RHEL/CentOS**:
+  ```bash
+  sudo systemctl restart network
+  ```
+
+## 4. Managing DNS Settings
+
+### 4.1 Configuring DNS Servers
+
+- **Temporary Configuration**: Edit `/etc/resolv.conf`.
+  ```plaintext
+  nameserver 8.8.8.8
+  nameserver 8.8.4.4
+  ```
+  - Adds Google DNS servers.
+
+- **Persistent Configuration**:
+  - **Debian/Ubuntu**: Edit `/etc/network/interfaces` or `/etc/systemd/resolved.conf`.
+  - **RHEL/CentOS**: Edit `/etc/sysconfig/network-scripts/ifcfg-eth0`.
+
+### 4.2 Testing DNS Configuration
+
+- **Command**:
+  ```bash
+  nslookup example.com
+  ```
+  - Checks the DNS resolution of `example.com`.
+
+## 5. Configuring Hostnames
+
+### 5.1 Viewing and Setting the Hostname
+
+- **View Current Hostname**:
+  ```bash
+  hostname
+  ```
+- **Set a New Hostname**:
+  ```bash
+  sudo hostnamectl set-hostname newhostname
+  ```
+
+### 5.2 Editing the Hosts File
+
+- **Command**:
+  ```bash
+  sudo nano /etc/hosts
+  ```
+  - Maps IP addresses to hostnames for local name resolution.
+
+## 6. Configuring Static Routes
+
+### 6.1 Adding a Static Route
+
+- **Command**:
+  ```bash
+  sudo ip route add 192.168.2.0/24 via 192.168.1.1 dev eth0
+  ```
+  - Routes traffic destined for the `192.168.2.0/24` network through `192.168.1.1` using `eth0`.
+
