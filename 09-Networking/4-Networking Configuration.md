@@ -142,4 +142,39 @@ Networking is a critical aspect of any Linux system, as it allows the system to 
   sudo ip route add 192.168.2.0/24 via 192.168.1.1 dev eth0
   ```
   - Routes traffic destined for the `192.168.2.0/24` network through `192.168.1.1` using `eth0`.
+### 6.2 Making Static Routes Persistent
 
+- **Debian/Ubuntu**: Add the route to `/etc/network/interfaces`.
+  ```plaintext
+  up ip route add 192.168.2.0/24 via 192.168.1.1 dev eth0
+  ```
+- **RHEL/CentOS**: Edit `/etc/sysconfig/network-scripts/route-eth0`.
+  ```plaintext
+  192.168.2.0/24 via 192.168.1.1 dev eth0
+  ```
+
+## 7. Troubleshooting Network Issues
+
+### 7.1 Testing Connectivity
+
+- **Ping Command**:
+  ```bash
+  ping -c 4 8.8.8.8
+  ```
+  - Sends 4 ICMP packets to `8.8.8.8` to test connectivity.
+
+### 7.2 Checking Routes
+
+- **Command**:
+  ```bash
+  ip route show
+  ```
+  - Displays the current routing table.
+
+### 7.3 Checking Network Interface Status
+
+- **Command**:
+  ```bash
+  ip link show
+  ```
+  - Displays the status of network interfaces.
